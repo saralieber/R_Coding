@@ -128,7 +128,11 @@ And_someTimes.People_doSTRANGEtHiNgS <- 8 # PLEASE NEVER DO ANYTHING LIKE THIS!
 > Create a variable called var_1 that is equal to 4. Then create a variable called var_2 that is var_1 raised to the power of 6. Print the results.
 
 ```{r}
+var_1 <- 4
+var_2 <- var_1^6
 
+print(var_1)
+print(var_2)
 ```
 
 # 2. Types of Data
@@ -256,7 +260,10 @@ as.numeric(mixed_vec)
 > Create an object called x that is assigned the number 8. Create an object called y that is a sequence of numbers from 2 to 16, by 2. Add x and y. What happens? 
 
 ```{r}
-
+x <- 8 
+y <- seq(from = 2, to = 16, by = 2)
+y
+x + y
 ```
 
 ### Exercise 2.2.1b 
@@ -264,35 +271,48 @@ as.numeric(mixed_vec)
 > Create an object called z that is a vector containing the numbers 5 and 10. Create an object called q that is a sequence of numbers from 5 to 25, by 5. Multiply q and z. What happens? 
 
 ```{r}
-
+z <- c(5, 10)
+q <- seq(from = 5, to = 25, by = 5)
+q
+z*q
 ```
 
 ### Exercise 2.2.1c
 > Create an object called a that is just the letter "a". Add a to x (from above). What happens? 
 
 ```{r eval = FALSE}
-
+a <- c("a")
+a <- a # this does same thing as above but doesn't create error later
+a
+x
+a + x
 ```
 
 ### Exercise 2.2.1d 
 > Create a vector called b that is just the number 8 in quotes. Add b to x (from above). What happens? 
 
 ```{r}
-
+b <- c("8")
+b + x
 ```
 
 ### Exercise 2.2.1e 
 > Find the type of each of the objects we just made (x, y, q, z, b)? 
 
 ```{r}
-
+typeof(x)
+typeof(y)
+typeof(q)
+typeof(z)
+typeof(b)
 ```
 
 ### Exercise 2.2.1f 
 > Find some way to add b to x (hint: you may need to be coercive). 
 
 ```{r}
-
+b <- as.numeric(b)
+b + x
 ```
 
 ### 2.2.2 Indexing vectors
@@ -391,14 +411,19 @@ z
 > Create a vector called `named` that includes the numbers 1 to 5. Name each value a, b, c, d, and e (in order). Print the first element using numerical indexing and the last element using name indexes. 
 
 ```{r}
-
+named <- 1:5
+names(named) <- c("a", "b", "c", "d", "e")
+named
+named[1]
+named["e"]
 ```
 
 ## Exercise 2.2.2b.
 > Change the  third element of `named` to the value 21 and then show your results.
 
 ```{r}
-
+named[3] <- 21
+named
 ```
 
 
