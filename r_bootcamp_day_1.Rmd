@@ -542,7 +542,15 @@ cory
 > Create a list like mine that is made up of `year`, `name`, `enrollment`, `fave_data`, but corresponds to you (professors, or postdocs can use year in position, years since PhD, or make a number up). Make sure you enter two types of favorite data (bc who could choose?!). Make it print your name.
 
 ```{r}
+sara <- list(year = 4L,
+             name = "Liebs",
+             enrollment = TRUE,
+             fave_data = c("numeric", "string"))
 
+sara[2]
+sara[[2]]
+sara["name"]
+sara$name
 ```
 
 
@@ -571,7 +579,10 @@ cory$fave_data[2]
 > Using the same list, get your PhD year in dog years (`*7`) and assign it to the 2nd position of the `year` object. Then show the new `year` object.
  
 ```{r}
+sara$year[2] <- sara$year*7
 
+sara[1]
+sara$year
 ```
  
 ## 2.4. Matrices & Arrays
@@ -671,7 +682,16 @@ mat["r1", 2]
 > Make a matrix called mat2 that is a 3 X 3 matrix with rows 1, 2, 3,  4, 5, 6,  7, 8, 9. Make the column names c1, c2, and c3, and make the row names r1, r2, and r3. Add the first column to the third column.
 
 ```{r}
+mat2 <- matrix(data = c(1, 2, 3, 4, 5, 6, 7, 8, 9),
+               nrow = 3,
+               ncol = 3,
+               byrow = TRUE)
+colnames(mat2) <- c("c1", "c2", "c3")
+rownames(mat2) <- c("r1", "r2", "r3")
 
+mat2
+
+mat2[,2] + mat2[,3]
 ```
  
  
@@ -679,7 +699,7 @@ mat["r1", 2]
 > Multiple the 3rd row by the value in the 2nd row and 2nd column.
 
 ```{r}
-
+mat2[3,]*mat2[2,2]
 ```
 
 ### 2.4.3 Arrays
@@ -713,6 +733,7 @@ df_1 <- data.frame(c1 = c(1, 3),
                    c3 = c("a", "b"),
                   row.names = c("r1", "r2"))
 df_1
+
 ```
 
 ### 2.5.2 Indexing Data Frames
@@ -720,6 +741,7 @@ df_1
 Indexing dataframes is sort of a hybrid between matrices and lists. Like matrices, you can index using the [row, column] format, using either numerical indexing:
 
 ```{r}
+df_1
 df_1[1, 3]
 ```
 
